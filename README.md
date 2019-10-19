@@ -1,26 +1,11 @@
 # Mastermind (mastermind)
 
-Fun project
+## Roadmap
 
-## Install the dependencies
-```bash
-yarn
-```
+The parameters of the application:
 
-### Start the app in development mode (hot-code reloading, error reporting, etc.)
-```bash
-quasar dev
-```
++ combination of 5 or 6 pieces
++ 6 or 7 different colors
++ 6 to 12 resolution steps
 
-### Lint the files
-```bash
-yarn run lint
-```
-
-### Build the app for production
-```bash
-quasar build
-```
-
-### Customize the configuration
-See [Configuring quasar.conf.js](https://quasar.dev/quasar-cli/quasar-conf-js).
+This app will be a Progressive web app. Thus fully offline, and eventually installable on the phone
