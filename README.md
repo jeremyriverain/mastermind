@@ -4,7 +4,7 @@
 
 The parameters of the application:
 
-+ combination of 5 or 6 pieces
++ combination of 4 or 5 locations
 + 6 or 7 different colors
 + 6 to 12 resolution steps
 
