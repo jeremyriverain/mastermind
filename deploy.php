@@ -33,7 +33,7 @@ task('deploy:build-assets', function () {
     if (has('previous_release')) {
         run('cp -R {{previous_release}}/node_modules {{release_path}}/node_modules 2>/dev/null || :');
     }
-    run('cd {{release_path}} && yarn install && quasar build -m pwa', [
+    run('cd {{release_path}} && yarn install && ' . $_ENV['QUASAR_BINARY_PATH'] . ' build -m pwa', [
         'timeout' => 0,
     ]);
 });

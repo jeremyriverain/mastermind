@@ -1,7 +1,9 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import { set } from 'lodash'
+import createPersistedState from 'vuex-persistedstate'
 
-// import example from './module-example'
+import settings from './settings'
 
 Vue.use(Vuex)
 
@@ -13,12 +15,18 @@ Vue.use(Vuex)
 export default function (/* { ssrContext } */) {
   const Store = new Vuex.Store({
     modules: {
-      // example
+      settings
     },
-
+    mutations: {
+      mutate (state, payload) {
+        set(state, payload.property, payload.value)
+      }
+    },
     // enable strict mode (adds overhead!)
     // for dev mode only
-    strict: process.env.DEV
+    strict: process.env.DEV,
+    plugins: [createPersistedState()]
+
   })
 
   return Store
