@@ -20,6 +20,10 @@ export default {
 
     console.log(lang)
     this.setLocale(lang)
+    this.$store.commit('mutate', {
+      property: 'settings.locale',
+      value: lang
+    })
   }
 }
 </script>

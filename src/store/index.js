@@ -4,6 +4,7 @@ import { set } from 'lodash'
 import createPersistedState from 'vuex-persistedstate'
 
 import settings from './settings'
+import game from './game'
 
 Vue.use(Vuex)
 
@@ -15,7 +16,8 @@ Vue.use(Vuex)
 export default function (/* { ssrContext } */) {
   const Store = new Vuex.Store({
     modules: {
-      settings
+      settings,
+      game
     },
     mutations: {
       mutate (state, payload) {
