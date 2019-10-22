@@ -12,6 +12,9 @@ export default {
   notify: {
     settingsSaved: 'The settings has been updated'
   },
+  numBoxes: 'Number of boxes',
+  numColors: 'Number of colors',
+  numSteps: 'Resolution steps',
   play: 'Play',
   settings: 'Settings',
   submit: 'Submit',

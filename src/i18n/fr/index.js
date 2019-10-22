@@ -12,6 +12,9 @@ export default {
   notify: {
     settingsSaved: 'Les paramètres ont été modifiés'
   },
+  numBoxes: 'Nombre de cases',
+  numColors: 'Nombre de couleurs',
+  numSteps: 'Étapes de résolution',
   play: 'Jouer',
   settings: 'Paramètres',
   submit: 'Valider',

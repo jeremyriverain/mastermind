@@ -1,3 +1,6 @@
 export default {
-  locale: null
+  locale: null,
+  numSteps: 10,
+  numBoxes: 4,
+  numColors: 5
 }
