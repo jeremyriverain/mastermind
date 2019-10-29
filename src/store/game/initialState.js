@@ -1,8 +1,9 @@
 export default {
-  playing: false,
   steps: [{
-    feedback: null,
     combination: []
   }],
-  combination: []
+  combination: [
+  ],
+
+  activeRow: 1
 }

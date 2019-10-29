@@ -1,11 +1,15 @@
 <template>
   <q-page class="flex flex-center">
-    <h1 class="text-h4">Mastermind</h1>
+    <game></game>
   </q-page>
 </template>
 
 <script>
+import Game from 'components/Game'
 export default {
-  name: 'PageIndex'
+  name: 'PageIndex',
+  components: {
+    Game
+  }
 }
 </script>

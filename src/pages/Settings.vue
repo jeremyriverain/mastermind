@@ -123,7 +123,7 @@ export default {
   },
   computed: {
     canOpenConfirmDialog () {
-      return this.$store.state.game.playing
+      return this.$store.getters['game/isPlaying']
     }
   },
   methods: {
@@ -138,6 +138,9 @@ export default {
         })
 
         this.setLocale(this.$store.state.settings.locale)
+
+        this.$store.commit('game/reset')
+
         this.$q.notify({
           message: this.$t('notify.settingsSaved')
         })
