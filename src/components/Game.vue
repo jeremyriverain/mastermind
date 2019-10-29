@@ -32,6 +32,6 @@ export default {
 <style lang="stylus">
 .mastermind-board {
   background-color: #eed;
-  box-shadow: 6px 8px 5px rgba(0, 0, 0, 0.6);
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.6);
 }
 </style>
