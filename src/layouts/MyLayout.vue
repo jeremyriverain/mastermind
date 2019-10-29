@@ -1,6 +1,6 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-toolbar class="text-primary">
+    <q-toolbar class="text-primary fixed-top">
       <transition
         appear
         enter-active-class="animated fadeIn"

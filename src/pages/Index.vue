@@ -1,7 +1,7 @@
 <template>
   <q-page class="row items-center justify-center">
     <game
-      class="col-xs-12"
+      class="col-xs-12 q-my-lg"
       style="max-width:190px"
     ></game>
   </q-page>
