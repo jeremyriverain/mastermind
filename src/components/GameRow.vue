@@ -2,13 +2,13 @@
   <q-item :class="[!isActiveRow ? 'bg-grey-8' : 'bg-grey-10']">
 
     <q-item-section>
-      <div class="flex items-center no-wrap">
-        <game-row-resolution></game-row-resolution>
+      <div class="flex items-center justify-center no-wrap">
+        <!-- <game-row-resolution></game-row-resolution> -->
         <game-row-combination
           :isActiveRow="isActiveRow"
           :numRow="numRow"
-          class="q-ml-lg"
-        ></game-row-combination>
+        >
+          ></game-row-combination>
       </div>
     </q-item-section>
 
@@ -17,12 +17,12 @@
 
 <script>
 import GameRowCombination from 'components/GameRowCombination'
-import GameRowResolution from 'components/GameRowResolution'
+// import GameRowResolution from 'components/GameRowResolution'
 export default {
   name: 'GameRow',
   components: {
-    GameRowCombination,
-    GameRowResolution
+    GameRowCombination
+    // GameRowResolution
   },
   props: {
     numRow: {

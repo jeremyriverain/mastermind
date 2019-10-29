@@ -5,6 +5,7 @@
       :key="i"
       :isActiveRow="isActiveRow"
       @chosen="save(i, $event)"
+      class="q-px-xs"
     ></game-row-combination-item>
   </div>
 </template>

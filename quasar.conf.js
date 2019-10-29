@@ -122,10 +122,10 @@ module.exports = function (ctx) {
         clientsClaim: true
       },
       manifest: {
-        // name: 'Mastermind',
-        // short_name: 'Mastermind',
-        // description: 'Fun project',
-        display: 'standalone',
+        name: 'Mastermind',
+        short_name: 'Mastermind',
+        description: 'Find the right combination',
+        display: 'fullscreen',
         orientation: 'portrait',
         background_color: '#ffffff',
         theme_color: '#027be3',

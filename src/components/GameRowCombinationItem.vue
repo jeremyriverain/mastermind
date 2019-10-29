@@ -1,11 +1,13 @@
 <template>
-  <div class="q-pl-sm">
+  <div>
     <q-btn
       :color="computedColor"
-      size="0.4rem"
+      size="0.5rem"
       round
-      text-color="black"
+      unelevated
+      text-color="grey-10"
       glossy
+      :outline="!color && !isActiveRow"
       @click="onClick"
       :ripple="false"
       :disable="!isActiveRow"

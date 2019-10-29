@@ -1,6 +1,9 @@
 <template>
-  <q-page class="flex flex-center">
-    <game></game>
+  <q-page class="row items-center justify-center">
+    <game
+      class="col-xs-12"
+      style="max-width:190px"
+    ></game>
   </q-page>
 </template>
 
