@@ -7,7 +7,7 @@
   >
     <q-footer>
       <q-tabs
-        indicator-color="black"
+        indicator-color="white"
         dense
         inline-label
         align="justify"

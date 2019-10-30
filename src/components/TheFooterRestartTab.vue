@@ -1,11 +1,9 @@
 <template>
-  <div>
-    <q-tab
-      icon="refresh"
-      @click="showDialog = true"
-      :label="$q.platform.is.mobile ? false : $t('restart')"
-    >
-    </q-tab>
+  <q-tab
+    icon="refresh"
+    @click="showDialog = true"
+    :label="$q.platform.is.mobile ? false : $t('restart')"
+  >
     <q-dialog
       v-model="showDialog"
       persistent
@@ -31,7 +29,7 @@
         </q-card-actions>
       </q-card>
     </q-dialog>
-  </div>
+  </q-tab>
 
 </template>
 
