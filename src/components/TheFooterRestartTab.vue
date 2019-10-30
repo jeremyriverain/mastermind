@@ -1,14 +1,10 @@
 <template>
-
   <div>
-    <q-btn
-      flat
-      round
-      dense
-      color="black"
+    <q-tab
       icon="refresh"
       @click="showDialog = true"
-    />
+    >
+    </q-tab>
     <q-dialog
       v-model="showDialog"
       persistent
@@ -35,11 +31,12 @@
       </q-card>
     </q-dialog>
   </div>
+
 </template>
 
 <script>
 export default {
-  // name: 'ComponentName',
+  name: 'TheFooterRestartBtn',
   data () {
     return {
       showDialog: false

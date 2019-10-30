@@ -7,22 +7,23 @@
   >
     <q-footer>
       <q-tabs
-        indicator-color="white"
+        indicator-color="black"
         dense
         inline-label
+        align="justify"
         class="bg-black"
       >
         <q-route-tab
           :to="{path: '/'}"
           exact
-          :label="$t('play')"
-          icon="gamepad"
+          icon="play_arrow"
         />
+
+        <restart-tab v-if="isPlaying"></restart-tab>
 
         <q-route-tab
           :to="{name: 'settings'}"
           exact
-          :label="$t('settings')"
           icon="settings"
         />
 
@@ -32,10 +33,16 @@
 </template>
 
 <script>
+import RestartTab from 'components/TheFooterRestartTab'
 export default {
-  // name: 'ComponentName',
-  data () {
-    return {}
+  name: 'TheFooter',
+  components: {
+    RestartTab
+  },
+  computed: {
+    isPlaying () {
+      return this.$store.getters['game/isPlaying']
+    }
   }
 }
 </script>

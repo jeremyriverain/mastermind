@@ -22,12 +22,14 @@ export default {
     isActiveRow: {
       type: Boolean,
       required: true
+    },
+    color: {
+      type: String
     }
   },
   data () {
     return {
-      colors: ['red', 'blue', 'yellow', 'green', 'white', 'purple'],
-      color: null
+      colors: ['red', 'blue', 'yellow', 'green', 'white', 'purple']
     }
   },
   // mounted () {
@@ -42,12 +44,13 @@ export default {
     onClick () {
       let currentIndex = this.colors.findIndex(c => c === this.color)
       console.log(currentIndex, this.colors.length)
+      let newColor
       if (currentIndex === -1 || currentIndex + 1 === this.colors.length) {
-        this.color = this.colors[0]
+        newColor = this.colors[0]
       } else {
-        this.color = this.colors[currentIndex + 1]
+        newColor = this.colors[currentIndex + 1]
       }
-      this.$emit('chosen', this.color)
+      this.$emit('chosen', newColor)
     }
   }
 }

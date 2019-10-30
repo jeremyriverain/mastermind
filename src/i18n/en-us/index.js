@@ -17,6 +17,7 @@ export default {
   numSteps: 'Resolution steps',
   play: 'Play',
   reload_confirm: 'Do you really want to restart the game ?',
+  restart: 'Restart',
   settings: 'Settings',
   submit: 'Submit',
   submit_confirm: 'If you confirm, you\'ll lose your current game'
