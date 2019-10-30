@@ -16,6 +16,7 @@
         <q-route-tab
           :to="{path: '/'}"
           exact
+          :label="$q.platform.is.mobile ? false : $t('play')"
           icon="play_arrow"
         />
 
@@ -24,6 +25,7 @@
         <q-route-tab
           :to="{name: 'settings'}"
           exact
+          :label="$q.platform.is.mobile ? false : $t('settings')"
           icon="settings"
         />
 

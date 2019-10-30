@@ -66,8 +66,9 @@
             ></setting-confirm-dialog>
             <q-btn
               :label="$t('submit')"
-              class="full-width q-mt-lg"
+              class=" q-mt-lg"
               glossy
+              outline
               color="primary"
               type="submit"
             />
@@ -101,12 +102,20 @@ export default {
       },
       boxesOptions: [
         {
+          label: '3',
+          value: 3
+        },
+        {
           label: '4',
           value: 4
         },
         {
           label: '5',
           value: 5
+        },
+        {
+          label: '6',
+          value: 6
         }
       ],
       colorsOptions: [

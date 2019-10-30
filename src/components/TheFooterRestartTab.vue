@@ -3,6 +3,7 @@
     <q-tab
       icon="refresh"
       @click="showDialog = true"
+      :label="$q.platform.is.mobile ? false : $t('restart')"
     >
     </q-tab>
     <q-dialog
@@ -19,11 +20,11 @@
             flat
             :label="$t('cancel')"
             v-close-popup
-            color="primary"
           />
           <q-btn
             flat
             :label="$t('confirm')"
+            color="primary"
             v-close-popup
             @click="reload"
           />

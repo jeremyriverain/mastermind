@@ -11,9 +11,27 @@
   >
     <template slot="selected">
       <div v-if="value">
-        {{displayLabel}}
+        <q-icon
+          :name="'img:statics/' + valueObject.icon"
+          class="q-mr-xs"
+        />
+        {{valueObject.label}}
       </div>
       <div v-else>{{$t('none')}}</div>
+    </template>
+
+    <template v-slot:option="scope">
+      <q-item
+        v-bind="scope.itemProps"
+        v-on="scope.itemEvents"
+      >
+        <q-item-section avatar>
+          <q-icon :name="'img:statics/' + scope.opt.icon" />
+        </q-item-section>
+        <q-item-section>
+          <q-item-label v-html="scope.opt.label" />
+        </q-item-section>
+      </q-item>
     </template>
   </q-select>
 </template>
@@ -30,16 +48,18 @@ export default {
       return [
         {
           label: this.$t('locale.french'),
-          value: 'fr'
+          value: 'fr',
+          icon: 'fr.svg'
         },
         {
           label: this.$t('locale.english'),
-          value: 'en-us'
+          value: 'en-us',
+          icon: 'gb.svg'
         }
       ]
     },
-    displayLabel () {
-      return this.value ? this.options.find(el => el.value === this.value).label : ''
+    valueObject () {
+      return this.value ? this.options.find(el => el.value === this.value) : null
     }
   }
 }

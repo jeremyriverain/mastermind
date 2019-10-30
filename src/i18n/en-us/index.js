@@ -1,7 +1,7 @@
 export default {
   cancel: 'Cancel',
   confirm: 'Confirm',
-  game_setting: 'Game setting',
+  game_setting: 'Game settings',
   general_setting: 'General setting',
   language: 'Language',
   locale: {
