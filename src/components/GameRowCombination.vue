@@ -33,6 +33,13 @@ export default {
 
     this.initCombination()
   },
+  watch: {
+    combination () {
+      if (this.combination !== this.numBoxes) {
+        this.initCombination()
+      }
+    }
+  },
   methods: {
     save (index, color) {
       console.log('saving combination')

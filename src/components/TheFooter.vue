@@ -11,7 +11,6 @@
         dense
         inline-label
         align="justify"
-        class="bg-black"
       >
         <q-route-tab
           :to="{path: '/'}"

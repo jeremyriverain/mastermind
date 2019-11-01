@@ -47,16 +47,21 @@
               </label>
             </div>
 
-            <div class="q-mt-md">
-              <label>{{$t('numColors')}}
-                <q-option-group
-                  v-model="form.numColors"
-                  :options="colorsOptions"
-                  color="black"
-                  inline
-                />
-              </label>
-            </div>
+            <setting-colors
+              class="q-mt-md"
+              :colors="form.colors"
+              @input="form.colors = $event"
+            >
+              <template
+                v-slot:error
+                v-if="colorsNotUnique"
+              >
+                <q-banner class="bg-negative text-white q-mb-md">
+                  {{$t('validators.colorsNotUnique')}}
+                </q-banner>
+              </template>
+
+            </setting-colors>
 
             <setting-confirm-dialog
               :show="showConfirmDialog"
@@ -82,13 +87,16 @@
 
 <script>
 import SelectLocale from 'components/SelectLocale'
+import SettingColors from 'components/SettingColors'
 import SettingConfirmDialog from 'components/SettingConfirmDialog'
 import setLocaleMixin from 'mixins/setLocaleMixin'
+import { cloneDeep } from 'lodash'
 
 export default {
   name: 'Settings',
   components: {
     SelectLocale,
+    SettingColors,
     SettingConfirmDialog
   },
   mixins: [
@@ -96,10 +104,13 @@ export default {
   ],
   data () {
     return {
+      secondColor: '#027be3',
+      cupcake: true,
       showConfirmDialog: false,
       hasConfirmed: false,
       form: {
       },
+      colorsNotUnique: false,
       boxesOptions: [
         {
           label: '3',
@@ -109,16 +120,6 @@ export default {
           label: '4',
           value: 4
         },
-        {
-          label: '5',
-          value: 5
-        },
-        {
-          label: '6',
-          value: 6
-        }
-      ],
-      colorsOptions: [
         {
           label: '5',
           value: 5
@@ -137,24 +138,39 @@ export default {
   },
   methods: {
     submit () {
-      if (this.canOpenConfirmDialog && !this.hasConfirmed) {
-        this.showConfirmDialog = true
-      } else {
-        console.log('submitting')
-        this.$store.commit('mutate', {
-          property: 'settings',
-          value: this.form
-        })
-
-        this.setLocale(this.$store.state.settings.locale)
-
-        this.$store.commit('game/reset')
-
+      if (!this.isColorsUnique()) {
+        this.colorsNotUnique = true
+        console.log('invalid')
         this.$q.notify({
-          message: this.$t('notify.settingsSaved')
+          message: this.$t('notify.formNotValid'),
+          color: 'warning',
+          textColor: 'black'
         })
-        this.$router.push('/')
+      } else {
+        if (this.canOpenConfirmDialog && !this.hasConfirmed) {
+          this.showConfirmDialog = true
+        } else {
+          console.log('submitting')
+          this.$store.commit('mutate', {
+            property: 'settings',
+            value: this.form
+          })
+
+          this.setLocale(this.$store.state.settings.locale)
+
+          this.$store.commit('game/reset')
+
+          this.$q.notify({
+            message: this.$t('notify.settingsSaved')
+          })
+
+          this.colorsNotUnique = false
+          // this.$router.push('/')
+        }
       }
+    },
+    isColorsUnique () {
+      return (new Set(this.form.colors)).size === this.form.colors.length
     },
     confirmSubmit () {
       this.showConfirmDialog = false
@@ -162,8 +178,8 @@ export default {
       this.submit()
     }
   },
-  mounted () {
-    this.form = Object.assign({}, this.$store.state.settings)
+  created () {
+    this.form = cloneDeep(this.$store.state.settings)
   }
 }
 </script>

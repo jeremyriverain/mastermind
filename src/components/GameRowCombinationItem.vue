@@ -1,7 +1,7 @@
 <template>
   <div>
     <q-btn
-      :color="computedColor"
+      :style="'background:' + computedColor"
       size="0.5rem"
       round
       unelevated
@@ -27,17 +27,18 @@ export default {
       type: String
     }
   },
-  data () {
-    return {
-      colors: ['red', 'blue', 'yellow', 'green', 'white', 'purple']
-    }
-  },
   // mounted () {
   //   this.color = this.isActiveRow ? 'grey-4' : 'grey-6'
   // },
   computed: {
     computedColor () {
-      return this.color ? this.color : 'grey-6'
+      return this.color ? this.color : '#9e9e9e'
+    },
+    style () {
+      return 'background:' + this.computedColor
+    },
+    colors () {
+      return this.$store.state.settings.colors
     }
   },
   methods: {
