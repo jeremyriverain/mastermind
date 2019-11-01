@@ -1,5 +1,5 @@
 <template>
-  <q-item :class="[!isActiveRow ? 'bg-grey-8' : 'bg-grey-10']">
+  <q-item class="bg-grey-8">
 
     <q-item-section>
       <div class="flex items-center justify-center no-wrap">

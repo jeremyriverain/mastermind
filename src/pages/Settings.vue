@@ -165,7 +165,7 @@ export default {
           })
 
           this.colorsNotUnique = false
-          // this.$router.push('/')
+          this.$router.push('/')
         }
       }
     },
