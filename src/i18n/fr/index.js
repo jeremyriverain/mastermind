@@ -25,6 +25,7 @@ export default {
   settings: 'Paramètres',
   submit: 'Valider',
   submit_confirm: 'Si vous continuez, vous perdrez les données de votre partie en cours',
+  test_combination: 'Tester la combinaison',
   validators: {
     colorsNotUnique: 'Les couleurs doivent être uniques'
   }

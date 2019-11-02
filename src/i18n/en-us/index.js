@@ -25,6 +25,7 @@ export default {
   settings: 'Settings',
   submit: 'Submit',
   submit_confirm: 'If you confirm, you\'ll lose your current game',
+  test_combination: 'Test combination',
   validators: {
     colorsNotUnique: 'Colors should be unique'
 
