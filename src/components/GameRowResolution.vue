@@ -1,21 +1,23 @@
 <template>
-  <div class="flex flex-center">
-    <!-- <game-row-resolution-item
-      v-for="i in max"
-      :key="i"
-      :index="i"
-    ></game-row-resolution-item> -->
+  <div class="flex flex-center q-gutter-sm">
+    <q-avatar
+      size="21px"
+      color="black"
+    >
+      <span style="font-size:17px">2</span></q-avatar>
+    <q-avatar
+      size="20px"
+      color="white"
+      text-color="black"
+    ><span style="font-size:17px">1</span></q-avatar>
+
   </div>
 </template>
 
 <script>
-// import GameRowResolutionItem from 'components/GameRowResolutionItem'
 
 export default {
   name: 'GameRowResolution',
-  components: {
-    // GameRowResolutionItem
-  },
   data () {
     return {
       widthItem: '15'

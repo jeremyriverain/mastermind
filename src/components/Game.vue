@@ -9,9 +9,9 @@
     >
 
       <game-row
-        v-for="i in $store.state.settings.numSteps"
+        v-for="i in activeRow"
         :key="i"
-        :numRow="Math.abs(i - 1 - $store.state.settings.numSteps)"
+        :numRow="Math.abs(i - 1 - activeRow)"
       ></game-row>
 
     </q-list>
@@ -25,6 +25,11 @@ export default {
   name: 'Game',
   components: {
     GameRow
+  },
+  computed: {
+    activeRow () {
+      return this.$store.state.game.activeRow
+    }
   }
 }
 </script>

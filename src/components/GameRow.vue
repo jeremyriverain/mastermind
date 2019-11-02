@@ -3,10 +3,12 @@
 
     <q-item-section>
       <div class="flex items-center justify-center no-wrap">
-        <!-- <game-row-resolution></game-row-resolution> -->
+        <game-row-resolution class="q-mr-sm"></game-row-resolution>
         <game-row-combination
           :isActiveRow="isActiveRow"
           :numRow="numRow"
+          class="q-pl-sm"
+          style="border-left:2px solid white"
         >
           ></game-row-combination>
       </div>
@@ -17,12 +19,12 @@
 
 <script>
 import GameRowCombination from 'components/GameRowCombination'
-// import GameRowResolution from 'components/GameRowResolution'
+import GameRowResolution from 'components/GameRowResolution'
 export default {
   name: 'GameRow',
   components: {
-    GameRowCombination
-    // GameRowResolution
+    GameRowCombination,
+    GameRowResolution
   },
   props: {
     numRow: {

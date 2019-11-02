@@ -14,13 +14,15 @@ export default {
   none: 'Aucun',
   notify: {
     settingsSaved: 'Les paramètres ont été modifiés',
-    formNotValid: 'Le formulaire n\'est pas valide'
+    formNotValid: 'Le formulaire n\'est pas valide',
+    incompleteCombination: 'Vous devez choisir une couleur pour chaque case'
   },
   numBoxes: 'Nombre de cases',
   numColors: 'Nombre de couleurs',
   numSteps: 'Étapes de résolution',
   play: 'Jouer',
   reload_confirm: 'Souhaitez-vous redémarrer la partie ?',
+  remaining_attempt: 'Aucune tentative restante | Dernier essai | Essais restants: {count}',
   restart: 'Rejouer',
   settings: 'Paramètres',
   submit: 'Valider',

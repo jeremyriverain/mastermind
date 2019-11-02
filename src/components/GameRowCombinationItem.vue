@@ -2,7 +2,7 @@
   <div>
     <q-btn
       :style="'background:' + computedColor"
-      size="0.5rem"
+      size="0.45rem"
       round
       unelevated
       text-color="grey-10"

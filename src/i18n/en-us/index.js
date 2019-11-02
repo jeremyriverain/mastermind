@@ -14,13 +14,15 @@ export default {
   none: 'None',
   notify: {
     settingsSaved: 'The settings has been updated',
-    formNotValid: 'The form is not valid'
+    formNotValid: 'The form is not valid',
+    incompleteCombination: 'You must choose a color for each box'
   },
   numBoxes: 'Number of boxes',
   numColors: 'Number of colors',
   numSteps: 'Resolution steps',
   play: 'Play',
   reload_confirm: 'Do you really want to restart the game ?',
+  remaining_attempt: 'No attempt remaining | Last attempt | Remaining attempts: {count}',
   restart: 'Restart',
   settings: 'Settings',
   submit: 'Submit',
