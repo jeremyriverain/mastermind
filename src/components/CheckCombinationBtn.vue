@@ -21,15 +21,14 @@ export default {
       return this.$store.state.game.activeRow
     },
     canIncrementActiveRow () {
-      return true
-      // let canIncrement = true
-      // for (let i = 0; i < this.combination.length; i++) {
-      //   if (!this.combination[i]) {
-      //     canIncrement = false
-      //     console.log('can\'t increment')
-      //   }
-      // }
-      // return canIncrement
+      let canIncrement = true
+      for (let i = 0; i < this.combination.length; i++) {
+        if (!this.combination[i]) {
+          canIncrement = false
+          console.log('can\'t increment')
+        }
+      }
+      return canIncrement
     }
   },
   methods: {
@@ -42,6 +41,12 @@ export default {
       }
       if (this.activeRow < this.$store.state.settings.numSteps) { // this was not the last attempt
         console.log('increment active Row')
+
+        this.$store.commit('game/addStep')
+        this.$store.dispatch('game/buildCombination', {
+          index: this.$store.state.game.activeRow
+        })
+
         this.$store.commit('mutate', {
           property: 'game.activeRows',
           value: this.$store.state.game.activeRow++

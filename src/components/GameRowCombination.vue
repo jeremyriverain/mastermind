@@ -31,14 +31,9 @@ export default {
   mounted () {
     console.log('isPlaying', this.$store.getters['game/isPlaying'])
 
-    this.initCombination()
-  },
-  watch: {
-    combination () {
-      if (this.combination !== this.numBoxes) {
-        this.initCombination()
-      }
-    }
+    this.$store.dispatch('game/buildCombination', {
+      index: this.numRow - 1
+    })
   },
   methods: {
     save (index, color) {
@@ -48,39 +43,6 @@ export default {
       this.$store.commit('mutate', {
         property: `game.steps[${this.numRow - 1}].combination`,
         value: combination
-      })
-    },
-    initCombination () {
-      if (!this.isActiveRow || this.combination.length === this.numBoxes) {
-        return
-      }
-
-      let newCombination
-      console.log('init combination')
-
-      let oldCombination = Object.assign([], this.combination)
-
-      let diff = this.combination.length - this.numBoxes
-      if (diff > 0) {
-        newCombination = oldCombination.splice(0, this.numBoxes)
-
-        console.log('remove', diff)
-      } else {
-        console.log('add', diff)
-        let push = []
-
-        for (let i = 0; i < Math.abs(diff); i++) {
-          push.push(null)
-        }
-
-        console.log('old combination', oldCombination)
-        newCombination = oldCombination.concat(push)
-      }
-
-      console.log('newCombination', newCombination)
-      this.$store.commit('mutate', {
-        property: 'game.steps[' + (this.numRow - 1) + '].combination',
-        value: newCombination
       })
     }
   },
