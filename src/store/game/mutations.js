@@ -5,5 +5,9 @@ export function reset (state) {
 }
 
 export function addStep (state) {
-  state.steps.push({ id: state.steps.length, combination: [] })
+  state.steps.push({
+    id: state.steps.length,
+    combination: [],
+    feedback: false
+  })
 }

@@ -1,6 +1,7 @@
 export default {
   steps: [{
     id: 0,
+    feedback: false,
     combination: []
   }],
   combination: [

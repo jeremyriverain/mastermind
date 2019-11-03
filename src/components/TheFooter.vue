@@ -7,7 +7,8 @@
   >
     <q-footer>
       <q-tabs
-        indicator-color="white"
+        indicator-color="black"
+        class="bg-white"
         dense
         inline-label
         align="justify"
@@ -17,11 +18,15 @@
           exact
           :label="$q.platform.is.mobile ? false : $t('play')"
           icon="play_arrow"
+          class="text-black"
         />
 
-        <restart-tab v-if="isPlaying"></restart-tab>
+        <restart-tab v-if="isPlaying"
+          class="text-black"
+          ></restart-tab>
 
         <q-route-tab
+          class="text-black"
           :to="{name: 'settings'}"
           exact
           :label="$q.platform.is.mobile ? false : $t('settings')"

@@ -48,6 +48,11 @@ export default {
         })
 
         this.$store.commit('mutate', {
+          property: 'game.steps[' + (this.activeRow - 1) + '].feedback',
+          value: true
+        })
+
+        this.$store.commit('mutate', {
           property: 'game.activeRow',
           value: (this.$store.state.game.activeRow + 1)
         })

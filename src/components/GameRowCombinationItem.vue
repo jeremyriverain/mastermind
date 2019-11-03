@@ -5,8 +5,7 @@
       size="0.45rem"
       round
       unelevated
-      :outline="color === null"
-      text-color="grey-10"
+      text-color="brown-7"
       :glossy="color !== null"
       @click="onClick"
       :ripple="false"
@@ -32,7 +31,7 @@ export default {
   // },
   computed: {
     computedColor () {
-      return this.color ? this.color : '#4e342e'
+      return this.color ? this.color : '#bcaaa4'
     },
     style () {
       return 'background:' + this.computedColor

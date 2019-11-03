@@ -1,10 +1,9 @@
 <template>
   <div>
     <q-list
-      separator
       dark
       class="mastermind-board text-white"
-      style="width:100%;border-radius:5px;overflow:hidden"
+      style="width:100%;overflow:hidden"
     >
 
       <game-row
@@ -36,9 +35,10 @@ export default {
 }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 .mastermind-board {
-  background-color: #eed;
+  background: url(./../assets/wood_pattern.png) no-repeat center center fixed;
+  background-size: cover;
   box-shadow: 2px 2px 0px #4e342e;
 }
 </style>

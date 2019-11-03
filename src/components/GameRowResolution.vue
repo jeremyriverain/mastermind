@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-center q-gutter-sm">
-    <game-row-resolution-item color="black" :value="feedback.black"></game-row-resolution-item>
-    <game-row-resolution-item color="white" :value="feedback.white"></game-row-resolution-item>
+    <game-row-resolution-item color="black" :value="feedback.black" :show="show"></game-row-resolution-item>
+    <game-row-resolution-item color="white" :value="feedback.white" :show="show"></game-row-resolution-item>
   </div>
 </template>
 
@@ -27,6 +27,9 @@ export default {
   computed: {
     feedback () {
       return this.$store.getters['game/feedback'](this.numRow - 1)
+    },
+    show () {
+      return this.$store.state.game.steps[this.numRow - 1].feedback
     }
   }
 }

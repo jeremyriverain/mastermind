@@ -4,6 +4,7 @@
       icon="help"
       flat
       round
+      outline
       text-color="primary"
     />
   </div>

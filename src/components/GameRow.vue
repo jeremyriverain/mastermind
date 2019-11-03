@@ -1,5 +1,5 @@
 <template>
-  <q-item class="bg-brown-5">
+  <q-item>
 
     <q-item-section>
       <div class="flex items-center justify-center no-wrap">
