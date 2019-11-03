@@ -3,85 +3,85 @@
     <div class="row justify-center col-12 q-mb-lg">
       <div class="col-10 col-sm-6 col-md-4 col-lg-3">
         <form
-          @submit.prevent="submit"
-          class="justify-center row "
-          novalidate
-        >
+           @submit.prevent="submit"
+           class="justify-center row "
+           novalidate
+           >
 
-          <div class="col-12">
-            <h2 class="text-h5 text-center">{{$t('general_setting')}}</h2>
+           <div class="col-12">
+             <h2 class="text-h5 text-center">{{$t('general_setting')}}</h2>
 
-            <select-locale
-              :value="form.locale"
-              @input="form.locale = $event"
-            ></select-locale>
+             <select-locale
+                 :value="form.locale"
+                 @input="form.locale = $event"
+                 ></select-locale>
 
-            <h2 class="text-h5 text-center q-mt-xl">{{$t('game_setting')}}</h2>
-            <div>
+               <h2 class="text-h5 text-center q-mt-xl">{{$t('game_setting')}}</h2>
+               <div>
 
-              <p>
+                 <p>
 
-                {{$t('numSteps')}}
-              </p>
-              <q-slider
-                v-model="form.numSteps"
-                :min="3"
-                :max="12"
-                :step="1"
-                snap
-                label
-                label-always
-                color="black"
-              />
-            </div>
+                 {{$t('numSteps')}}
+                 </p>
+                 <q-slider
+                   v-model="form.numSteps"
+                   :min="3"
+                   :max="12"
+                   :step="1"
+                   snap
+                   label
+                   label-always
+                   color="black"
+                   />
+               </div>
 
-            <div class="q-mt-md">
-              <label>{{$t('numBoxes')}}
-                <q-option-group
-                  v-model="form.numBoxes"
-                  :options="boxesOptions"
-                  color="black"
-                  inline
-                />
-              </label>
-            </div>
+               <div class="q-mt-md">
+                 <label>{{$t('numBoxes')}}
+                   <q-option-group
+                    v-model="form.numBoxes"
+                    :options="boxesOptions"
+                    color="black"
+                    inline
+                    />
+                 </label>
+               </div>
 
-            <setting-colors
-              class="q-mt-md"
-              :colors="form.colors"
-              @input="form.colors = $event"
-            >
-              <template
-                v-slot:error
-                v-if="colorsNotUnique"
-              >
-                <q-banner class="bg-negative text-white q-mb-md">
-                  {{$t('validators.colorsNotUnique')}}
-                </q-banner>
-              </template>
+               <setting-colors
+                    class="q-mt-md"
+                    :colors="form.colors"
+                    @input="form.colors = $event"
+                    >
+                    <template
+                    v-slot:error
+                    v-if="colorsNotUnique"
+                    >
+                    <q-banner class="bg-negative text-white q-mb-md">
+                      {{$t('validators.colorsNotUnique')}}
+                    </q-banner>
+                    </template>
 
-            </setting-colors>
+               </setting-colors>
 
-            <setting-confirm-dialog
-              :show="showConfirmDialog"
-              v-if="canOpenConfirmDialog"
-              @cancel="showConfirmDialog = false"
-              @submit="confirmSubmit"
-            ></setting-confirm-dialog>
-            <q-btn
-              :label="$t('submit')"
-              class=" q-mt-lg"
-              glossy
-              outline
-              color="primary"
-              type="submit"
-            />
+               <setting-confirm-dialog
+                              :show="showConfirmDialog"
+                              v-if="canOpenConfirmDialog"
+                              @cancel="showConfirmDialog = false"
+                              @submit="confirmSubmit"
+                              ></setting-confirm-dialog>
+                 <q-btn
+                              :label="$t('submit')"
+                              class=" q-mt-lg"
+                              glossy
+                              outline
+                              color="primary"
+                              type="submit"
+                              />
 
-          </div>
+           </div>
         </form>
       </div>
     </div>
-  </q-page>
+                 </q-page>
 </template>
 
 <script>
@@ -109,30 +109,22 @@ export default {
       hasConfirmed: false,
       form: {
       },
-      colorsNotUnique: false,
-      boxesOptions: [
-        {
-          label: '3',
-          value: 3
-        },
-        {
-          label: '4',
-          value: 4
-        },
-        {
-          label: '5',
-          value: 5
-        },
-        {
-          label: '6',
-          value: 6
-        }
-      ]
+      colorsNotUnique: false
     }
   },
   computed: {
     canOpenConfirmDialog () {
       return this.$store.getters['game/isPlaying']
+    },
+    boxesOptions () {
+      let options = []
+      for (let i = 2; i < 7; i++) {
+        options.push({
+          label: i.toString(),
+          value: i
+        })
+      }
+      return options
     }
   },
   methods: {
@@ -157,7 +149,7 @@ export default {
 
           this.setLocale(this.$store.state.settings.locale)
 
-          this.$store.commit('game/reset')
+          this.$store.dispatch('game/reset')
 
           this.$q.notify({
             message: this.$t('notify.settingsSaved')

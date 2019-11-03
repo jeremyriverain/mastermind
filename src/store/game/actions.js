@@ -1,3 +1,11 @@
+export function reset ({ commit, dispatch }) {
+  commit('reset')
+  dispatch('initResultCombination')
+  dispatch('buildCombination', {
+    index: 0
+  })
+}
+
 export function buildCombination ({ state, commit, rootState }, payload) {
   let combination = state.steps[payload.index].combination
 
@@ -33,6 +41,23 @@ export function buildCombination ({ state, commit, rootState }, payload) {
   commit('mutate', {
     property: 'game.steps[' + (payload.index) + '].combination',
     value: newCombination
+  }, {
+    root: true
+  })
+}
+
+export function initResultCombination ({ state, commit, rootState }) {
+  let combination = []
+  let settingsStore = rootState.settings
+  for (let i = 0; i < settingsStore.numBoxes; i++) {
+    combination.push(settingsStore.colors[Math.floor(Math.random() * settingsStore.colors.length)])
+  }
+
+  console.log('result', combination)
+
+  commit('mutate', {
+    property: 'game.combination',
+    value: combination
   }, {
     root: true
   })

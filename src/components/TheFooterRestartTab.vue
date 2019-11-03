@@ -43,7 +43,7 @@ export default {
   },
   methods: {
     reload () {
-      this.$store.commit('game/reset')
+      this.$store.dispatch('game/reset')
     }
   }
 }
