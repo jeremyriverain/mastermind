@@ -48,8 +48,8 @@ export default {
         })
 
         this.$store.commit('mutate', {
-          property: 'game.activeRows',
-          value: this.$store.state.game.activeRow++
+          property: 'game.activeRow',
+          value: (this.$store.state.game.activeRow + 1)
         })
       }
     }

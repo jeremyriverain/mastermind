@@ -10,7 +10,7 @@
           class="q-pl-sm"
           style="border-left:2px solid white"
         >
-          ></game-row-combination>
+          </game-row-combination>
       </div>
     </q-item-section>
 

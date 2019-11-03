@@ -7,5 +7,5 @@ export function reset (state) {
 }
 
 export function addStep (state) {
-  state.steps.push({ combination: [] })
+  state.steps.push({ id: state.steps.length, combination: [] })
 }

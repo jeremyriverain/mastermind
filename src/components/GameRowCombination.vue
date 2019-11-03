@@ -6,7 +6,7 @@
       :isActiveRow="isActiveRow"
       @chosen="save(i - 1, $event)"
       class="q-px-xs"
-      :color="isActiveRow ? combination[i - 1] : null"
+      :color="combination[i - 1]"
     ></game-row-combination-item>
   </div>
 </template>
@@ -48,10 +48,6 @@ export default {
   },
   computed: {
     combination () {
-      if (!this.isActiveRow) {
-        return null
-      }
-
       return this.$store.state.game.steps[this.numRow - 1].combination
     },
     numBoxes () {

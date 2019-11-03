@@ -1,6 +1,6 @@
 <template>
   <q-page padding>
-    <div class="row justify-center col-12">
+    <div class="row justify-center col-12 q-mb-lg">
       <div class="col-10 col-sm-6 col-md-4 col-lg-3">
         <form
           @submit.prevent="submit"
@@ -25,14 +25,13 @@
               </p>
               <q-slider
                 v-model="form.numSteps"
-                :min="6"
+                :min="3"
                 :max="12"
                 :step="1"
                 snap
                 label
                 label-always
                 color="black"
-                markers
               />
             </div>
 
