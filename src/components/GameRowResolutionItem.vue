@@ -3,10 +3,9 @@
     size="21px"
     :color="color"
     :text-color="textColor"
-    :class="[!show ? 'invisible' : '']"
     >
     <!--<span style="font-size:17px">{{value}}</span>-->
-    <span>{{value}}</span>
+    <span>{{show ? value : '?'}}</span>
   </q-avatar>
 </template>
 
