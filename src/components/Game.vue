@@ -1,7 +1,6 @@
 <template>
   <div>
     <q-list
-      bordered
       separator
       dark
       class="mastermind-board text-white"
@@ -40,6 +39,6 @@ export default {
 <style lang="stylus">
 .mastermind-board {
   background-color: #eed;
-  box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.6);
+  box-shadow: 2px 2px 0px #4e342e;
 }
 </style>

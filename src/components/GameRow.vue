@@ -1,14 +1,15 @@
 <template>
-  <q-item class="bg-grey-8">
+  <q-item class="bg-brown-5">
 
     <q-item-section>
       <div class="flex items-center justify-center no-wrap">
-        <game-row-resolution class="q-mr-sm"></game-row-resolution>
+        <game-row-resolution class="q-mr-md"
+          :numRow="numRow"
+          ></game-row-resolution>
         <game-row-combination
           :isActiveRow="isActiveRow"
           :numRow="numRow"
-          class="q-pl-sm"
-          style="border-left:2px solid white"
+          class="q-pl-md"
         >
           </game-row-combination>
       </div>

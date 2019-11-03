@@ -5,9 +5,9 @@
       size="0.45rem"
       round
       unelevated
+      :outline="color === null"
       text-color="grey-10"
-      glossy
-      :outline="!color && !isActiveRow"
+      :glossy="color !== null"
       @click="onClick"
       :ripple="false"
       :disable="!isActiveRow"
@@ -32,7 +32,7 @@ export default {
   // },
   computed: {
     computedColor () {
-      return this.color ? this.color : '#9e9e9e'
+      return this.color ? this.color : '#4e342e'
     },
     style () {
       return 'background:' + this.computedColor
