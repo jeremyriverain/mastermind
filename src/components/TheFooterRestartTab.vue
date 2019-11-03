@@ -44,9 +44,9 @@ export default {
   methods: {
     onTabClick () {
       if (this.$store.getters['game/hasWon'] || this.$store.getters['game/hasLost']) {
-       this.reload()
+        this.reload()
       } else {
-      this.showDialog = true
+        this.showDialog = true
       }
     },
     reload () {

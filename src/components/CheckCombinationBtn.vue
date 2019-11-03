@@ -40,10 +40,10 @@ export default {
         return
       }
 
-       this.$store.commit('mutate', {
-         property: 'game.steps[' + (this.activeRow - 1) + '].feedback',
-         value: true
-       })
+      this.$store.commit('mutate', {
+        property: 'game.steps[' + (this.activeRow - 1) + '].feedback',
+        value: true
+      })
 
       if (!this.$store.getters['game/hasWon'] && !this.$store.getters['game/hasLost']) {
         console.log('increment active Row')
