@@ -1,7 +1,7 @@
 <template>
   <div class="text-right">
     <q-btn
-      icon="help"
+      icon="info"
       flat
       round
       outline

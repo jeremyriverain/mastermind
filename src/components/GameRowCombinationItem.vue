@@ -9,7 +9,7 @@
       :glossy="color !== null"
       @click="onClick"
       :ripple="false"
-      :disable="!isActiveRow"
+      :disable="!isActiveRow || $store.getters['game/hasWon'] || $store.getters['game/hasLost']"
     />
   </div>
 </template>

@@ -1,9 +1,11 @@
-export function isPlaying (state) {
+export function isPlaying (state, getters) {
   let isPlaying = false
-  for (let j = 0; j < state.steps[0].combination.length; j++) {
-    if (state.steps[0].combination[j] !== null) {
-      isPlaying = true
-      break
+  if (!getters['hasLost'] && !getters['hasWon']) {
+    for (let j = 0; j < state.steps[0].combination.length; j++) {
+      if (state.steps[0].combination[j] !== null) {
+        isPlaying = true
+        break
+      }
     }
   }
   return isPlaying
@@ -11,7 +13,7 @@ export function isPlaying (state) {
 
 export function hasLost (state, getters, rootState) {
   let hasLost = false
-  if (!getters['hasWon'] && state.steps.length >= rootState.settings.numSteps) {
+  if (!getters['hasWon'] && state.steps.length === rootState.settings.numSteps && state.steps[rootState.settings.numSteps - 1].feedback) {
     hasLost = true
   }
 
@@ -20,7 +22,7 @@ export function hasLost (state, getters, rootState) {
 
 export function hasWon (state, getters, rootState) {
   let hasWon = false
-  if (state.steps.length <= rootState.settings.numSteps && getters['feedback'](state.steps.length - 1).black === rootState.settings.numBoxes) {
+  if (state.steps.length <= rootState.settings.numSteps && state.steps[state.steps.length - 1].feedback && getters['feedback'](state.steps.length - 1).black === rootState.settings.numBoxes) {
     hasWon = true
   }
   return hasWon

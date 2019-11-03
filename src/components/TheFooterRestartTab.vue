@@ -1,7 +1,7 @@
 <template>
   <q-tab
     icon="refresh"
-    @click="showDialog = true"
+    @click="onTabClick"
     :label="$q.platform.is.mobile ? false : $t('restart')"
   >
     <q-dialog
@@ -42,6 +42,13 @@ export default {
     }
   },
   methods: {
+    onTabClick () {
+      if (this.$store.getters['game/hasWon'] || this.$store.getters['game/hasLost']) {
+       this.reload()
+      } else {
+      this.showDialog = true
+      }
+    },
     reload () {
       this.$store.dispatch('game/reset')
     }

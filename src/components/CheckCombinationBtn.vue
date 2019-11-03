@@ -5,7 +5,7 @@
       glossy
       rounded
       @click="onClick"
-      :disable="$store.state.game.activeRow === $store.state.settings.numSteps"
+      :disable="$store.getters['game/hasWon'] || $store.getters['game/hasLost']"
     />
   </div>
 </template>
@@ -20,7 +20,7 @@ export default {
     activeRow () {
       return this.$store.state.game.activeRow
     },
-    canIncrementActiveRow () {
+    allColorsFilled () {
       let canIncrement = true
       for (let i = 0; i < this.combination.length; i++) {
         if (!this.combination[i]) {
@@ -33,13 +33,19 @@ export default {
   },
   methods: {
     onClick () {
-      if (!this.canIncrementActiveRow) {
+      if (!this.allColorsFilled) {
         this.$q.notify({
           message: this.$t('notify.incompleteCombination')
         })
         return
       }
-      if (this.activeRow < this.$store.state.settings.numSteps) { // this was not the last attempt
+
+       this.$store.commit('mutate', {
+         property: 'game.steps[' + (this.activeRow - 1) + '].feedback',
+         value: true
+       })
+
+      if (!this.$store.getters['game/hasWon'] && !this.$store.getters['game/hasLost']) {
         console.log('increment active Row')
 
         this.$store.commit('game/addStep')
@@ -48,14 +54,12 @@ export default {
         })
 
         this.$store.commit('mutate', {
-          property: 'game.steps[' + (this.activeRow - 1) + '].feedback',
-          value: true
-        })
-
-        this.$store.commit('mutate', {
           property: 'game.activeRow',
           value: (this.$store.state.game.activeRow + 1)
         })
+      } else {
+        console.log('end of the game')
+        this.$root.$emit('gameEnd')
       }
     }
   }

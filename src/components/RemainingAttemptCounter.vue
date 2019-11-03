@@ -9,7 +9,8 @@ export default {
   name: 'RemainingAttemptCounter',
   computed: {
     remainingAttemptCounter () {
-      return this.$store.state.settings.numSteps - this.$store.state.game.activeRow + 1
+      let countFeedback = this.$store.state.game.steps.filter(step => step.feedback).length
+      return this.$store.state.settings.numSteps - countFeedback
     }
   }
 }

@@ -30,5 +30,7 @@ export default {
   test_combination: 'Tester la combinaison',
   validators: {
     colorsNotUnique: 'Les couleurs doivent être uniques'
-  }
+  },
+  you_lose: 'Perdu',
+  you_win: 'Gagné'
 }

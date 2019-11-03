@@ -21,7 +21,7 @@
           class="text-black"
         />
 
-        <restart-tab v-if="isPlaying"
+        <restart-tab v-if="showRestartBtn"
           class="text-black"
           ></restart-tab>
 
@@ -46,8 +46,8 @@ export default {
     RestartTab
   },
   computed: {
-    isPlaying () {
-      return this.$store.getters['game/isPlaying']
+    showRestartBtn () {
+      return this.$store.getters['game/isPlaying'] || this.$store.getters['game/hasWon'] || this.$store.getters['game/hasLost']
     }
   }
 }
