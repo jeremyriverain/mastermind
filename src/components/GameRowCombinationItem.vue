@@ -4,11 +4,9 @@
       :style="'background:' + computedColor"
       size="0.45rem"
       round
-      unelevated
       text-color="brown-7"
       :glossy="color !== null"
       @click="onClick"
-      :ripple="false"
       :disable="!isActiveRow || $store.getters['game/hasWon'] || $store.getters['game/hasLost']"
     />
   </div>

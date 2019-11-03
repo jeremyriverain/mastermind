@@ -40,6 +40,8 @@ export const feedback = (state) => (index) => {
   for (let i = 0; i < proposal.length; i++) {
     if (result[i] === proposal[i]) {
       black++
+      result[i] = null
+      proposal[i] = null
     } else {
       uncheckedIndexes.push(i)
     }
@@ -48,8 +50,10 @@ export const feedback = (state) => (index) => {
   console.log('uncheckedIndexes', uncheckedIndexes)
 
   for (let i = 0; i < uncheckedIndexes.length; i++) {
-    if (result.indexOf(proposal[uncheckedIndexes[i]]) !== -1) {
+    let index = result.indexOf(proposal[uncheckedIndexes[i]])
+    if (index !== -1) {
       white++
+      result[index] = null
     }
   }
 

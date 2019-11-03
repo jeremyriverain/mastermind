@@ -19,6 +19,9 @@ export default function (/* { ssrContext } */) {
       settings,
       game
     },
+    state: {
+      hasReadRules: false
+    },
     mutations: {
       mutate (state, payload) {
         set(state, payload.property, payload.value)

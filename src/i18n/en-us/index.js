@@ -24,6 +24,7 @@ export default {
   reload_confirm: 'Do you really want to restart the game ?',
   remaining_attempt: 'No attempt remaining | Last attempt | Remaining attempts: {count}',
   restart: 'Restart',
+  rules: 'Rules of the game',
   settings: 'Settings',
   submit: 'Submit',
   submit_confirm: 'If you confirm, you\'ll lose your current game',

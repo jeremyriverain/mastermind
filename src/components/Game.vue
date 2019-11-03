@@ -1,9 +1,9 @@
 <template>
   <div>
-    <q-list
-      dark
-      class="mastermind-board text-white"
-      style="width:100%;overflow:hidden"
+    <q-card
+      style="width:100%"
+      class="bg-grey-9"
+      bordered
     >
 
       <game-row
@@ -12,7 +12,7 @@
         :numRow="i"
       ></game-row>
 
-    </q-list>
+    </q-card>
   </div>
 
 </template>
@@ -34,11 +34,3 @@ export default {
   }
 }
 </script>
-
-<style lang="stylus" scoped>
-.mastermind-board {
-  background: url(./../assets/wood_pattern.png) no-repeat center center fixed;
-  background-size: cover;
-  box-shadow: 2px 2px 0px #4e342e;
-}
-</style>

@@ -1,12 +1,13 @@
 <template>
-  <q-avatar
+  <q-badge
     size="21px"
     :color="color"
     :text-color="textColor"
+    class="shadow-3"
     >
     <!--<span style="font-size:17px">{{value}}</span>-->
     <span>{{show ? value : '?'}}</span>
-  </q-avatar>
+  </q-badge>
 </template>
 
 <script>

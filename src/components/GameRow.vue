@@ -1,7 +1,5 @@
 <template>
-  <q-item>
-
-    <q-item-section>
+    <q-card-section>
       <div class="flex items-center justify-center no-wrap">
         <game-row-resolution class="q-mr-md"
           :numRow="numRow"
@@ -13,9 +11,7 @@
         >
           </game-row-combination>
       </div>
-    </q-item-section>
-
-  </q-item>
+    </q-card-section>
 </template>
 
 <script>

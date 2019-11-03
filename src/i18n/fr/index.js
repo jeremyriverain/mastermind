@@ -24,6 +24,7 @@ export default {
   reload_confirm: 'Souhaitez-vous redémarrer la partie ?',
   remaining_attempt: 'Aucune tentative restante | Dernier essai | Essais restants: {count}',
   restart: 'Rejouer',
+  rules: 'Règles du jeu',
   settings: 'Paramètres',
   submit: 'Valider',
   submit_confirm: 'Si vous continuez, vous perdrez les données de votre partie en cours',

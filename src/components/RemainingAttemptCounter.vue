@@ -1,5 +1,5 @@
 <template>
-  <p>
+  <p class="text-uppercase">
     {{$tc('remaining_attempt', remainingAttemptCounter, {count: remainingAttemptCounter})}}
   </p>
 </template>

@@ -7,26 +7,23 @@
   >
     <q-footer>
       <q-tabs
-        indicator-color="black"
-        class="bg-white"
+        indicator-color="white"
         dense
         inline-label
         align="justify"
+        class="bg-grey-9"
       >
         <q-route-tab
           :to="{path: '/'}"
           exact
           :label="$q.platform.is.mobile ? false : $t('play')"
           icon="play_arrow"
-          class="text-black"
         />
 
         <restart-tab v-if="showRestartBtn"
-          class="text-black"
           ></restart-tab>
 
         <q-route-tab
-          class="text-black"
           :to="{name: 'settings'}"
           exact
           :label="$q.platform.is.mobile ? false : $t('settings')"

@@ -3,7 +3,8 @@
     <q-btn
       :label="$t('test_combination')"
       glossy
-      rounded
+       color="primary"
+       outline
       @click="onClick"
       :disable="$store.getters['game/hasWon'] || $store.getters['game/hasLost']"
     />

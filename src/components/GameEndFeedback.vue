@@ -1,15 +1,14 @@
 <template>
   <div class="text-center">
-    <q-banner inline-actions class="text-white" :class="classStyle">
-      {{label}}
-    </q-banner>
-    <q-banner inline-actions class="solution text-white">
-    <div class="flex justify-center items-center q-gutter-sm">
-      <div v-for="(color, i) in $store.state.game.combination" :key="i">
-        <q-btn :style="'background:' + color" flat round glossy size="0.45rem" />
-      </div>
-    </div>
-    </q-banner>
+    <q-card class="bg-grey-9">
+      <q-card-section>
+        <div class="flex justify-center items-center q-gutter-sm">
+          <div v-for="(color, i) in $store.state.game.combination" :key="i">
+            <q-btn :style="'background:' + color" round glossy size="0.45rem" />
+          </div>
+        </div>
+            </q-card-section>
+      </q-card>
   </div>
 </template>
 
@@ -19,20 +18,20 @@ export default {
   data () {
     return {}
   },
-  computed: {
-    classStyle () {
-      return this.$store.getters['game/hasWon'] ? 'bg-positive' : 'bg-negative'
-    },
-    label () {
-      return this.$store.getters['game/hasWon'] ? this.$t('you_win') : this.$t('you_lose')
+  mounted () {
+    if (this.$store.getters['game/hasWon']) {
+      this.$q.notify({
+        message: this.$t('you_win'),
+        color: 'positive',
+        textColor: 'white'
+      })
+    } else {
+      this.$q.notify({
+        message: this.$t('you_lose'),
+        color: 'negative',
+        textColor: 'white'
+      })
     }
   }
 }
 </script>
-
-<style lang="stylus" scoped>
-.solution
-  background: url(./../assets/wood_pattern.png) no-repeat center center fixed;
-  background-size: cover;
-  box-shadow: 2px 2px 0px #4e342e;
-</style>
