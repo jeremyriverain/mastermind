@@ -13,7 +13,7 @@ There are some requirements before deploying the app on your server:
 + Yarn installed
 + @quasar/cli installed
 
-We use [Deployer](https://deployer.org/docs/getting-started.html) to automate the process. Feel free by trying this recipe. It workw fine for me.
+We use [Deployer](https://deployer.org/docs/getting-started.html) to automate the process. Feel free by trying this recipe. It worked fine for me.
 
 First, begin by filling in all the environment variables in the .env file.
 + DEPLOY_PATH: this is the absolute path of the project on your server
