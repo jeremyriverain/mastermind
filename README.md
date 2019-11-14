@@ -6,7 +6,7 @@ This app is a Progressive web app. Thus fully offline, and eventually installabl
 
 `quasar dev -m pwa`
 
-# Deploy in production
+## Deploy in production
 
 There are some requirements before deploying the app on your server:
 + Node 10.16.3
@@ -34,3 +34,7 @@ Don't forget to make a `composer install` to install the `symfony/dotenv` depend
 Create the target directory on your remote server.
 
 Finally, make a `dep deploy -vv` and your project will be deployed on your server. If you have any error during the process, then inspect the logs provided by Deployer on the command line.
+
+## Demo
+
+There is a demo [here](https://mastermind.geekco.fr)
