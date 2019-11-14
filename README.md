@@ -1,6 +1,22 @@
 # Mastermind
 
-This app is a Progressive web app. Thus fully offline, and eventually installable on the phone
+## Rules of the game
+
+This game is a Mastermind. You have to guess the combination created by the program
+
+![Playing Mastermind](https://mastermind.geekco.fr/statics/test_mastermind.gif)
+
+The program already chose the combination, so you can start the game right now!
+
+It's easy to make a proposition. You can change the colors of each peg by clicking on it. If you click multiple times, the color switches from one to another. When your proposition is ready, click on the button "test combination" and you will obtain a feedback.
+
+The white badges represents the number of correct pegs, but in the wrong place.
+
+The black badges represents the number of correct pegs, and in the right place.
+
+If the game is too easy or too difficult for you, you can override some parameters to adjust the complexity. See below:
+
+![Game settings](https://mastermind.geekco.fr/statics/settings.gif)
 
 ## Develop
 
@@ -13,7 +29,7 @@ There are some requirements before deploying the app on your server:
 + Yarn installed
 + @quasar/cli installed
 
-We use [Deployer](https://deployer.org/docs/getting-started.html) to automate the process. Feel free by trying this recipe. It worked fine for me.
+We use [Deployer](https://deployer.org/docs/getting-started.html) to automate the process. Feel free to try this recipe. It works fine for me.
 
 First, begin by filling in all the environment variables in the .env file.
 + DEPLOY_PATH: this is the absolute path of the project on your server
