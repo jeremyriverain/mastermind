@@ -7,5 +7,6 @@ export default {
   combination: [
   ],
 
-  activeRow: 1
+  activeRow: 1,
+  endStatusNotified: false
 }
